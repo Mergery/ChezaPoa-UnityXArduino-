@@ -68,15 +68,10 @@ public class PlayerController : MonoBehaviour
             float ay = float.Parse(values[1]);
             float az = float.Parse(values[2]);
 
-            // Use the data to control the player's movement
-            // Example: transform.Translate(Vector3.right * ax * Time.deltaTime * sideSpeed);
-
-
             float movement = ax * Time.deltaTime * sideSpeed;
 
             // Move the player left or right based on accelerometer data
            transform.Translate(-Vector3.right * movement);
-           //playerRb.AddForce(Vector3.right * ax* Time.deltaTime * sideForce);
 
             // Limit player movement within the screen bounds
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, -screenWorldUnits, screenWorldUnits), transform.position.y, transform.position.z);
