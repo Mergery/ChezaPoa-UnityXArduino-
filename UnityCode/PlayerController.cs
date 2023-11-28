@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     bool gameStarted;
     float smoothing;
 
-    public SerialPort serialPort = new SerialPort("COM12", 115200); // Adjust the port and baud rate as needed
+    public SerialPort serialPort = new SerialPort("COM12", 115200);
 
     void Start()
     {
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void ParseArduinoData(string data)
     {
-        // Assuming the Arduino sends data in the format "ax,ay,az"
+        // Arduino sends data in the format "ax,ay,az"
         string[] values = data.Split(',');
 
         if (values.Length == 3)
